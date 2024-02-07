@@ -5,21 +5,13 @@ using UnityEngine;
 
 public class AutoScroll : MonoBehaviour
 {
-    private float timeToMove = 1.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public float scrollSpeed = 1.0f; // Speed at which objects will move down
 
     // Update is called once per frame
     void Update()
     {
-        timeToMove = timeToMove - Time.deltaTime;
-        if (timeToMove <= 0.0f) 
-        {
-            transform.localPosition += new Vector3(0, 10, 0);
-            Debug.Log("Current position: " + transform.position.y);
-            timeToMove = 1.0f;
-        }
+        // Move the object down continuously at scrollSpeed units per second
+        transform.localPosition += Vector3.down * scrollSpeed * Time.deltaTime;
     }
 }
+
