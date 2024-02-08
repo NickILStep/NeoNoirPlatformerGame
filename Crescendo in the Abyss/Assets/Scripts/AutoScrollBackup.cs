@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class AutoScroll : MonoBehaviour
+public class AutoScrollBackup : MonoBehaviour
 {
     private float timeToMove = 1.0f;
     // Start is called before the first frame update
