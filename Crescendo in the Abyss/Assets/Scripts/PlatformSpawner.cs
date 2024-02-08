@@ -8,12 +8,14 @@ public class PlatformSpawner : MonoBehaviour
     public float spawnRate = 2.0f; // Time in seconds between each spawn
     public float platformMinLength = 2.0f; // Minimum length of the platform
     public float platformMaxLength = 5.0f; // Maximum length of the platform
+    public Transform cameraPos;
 
     private float timer; // Timer to keep track of spawning
 
     // Start is called before the first frame update
     void Start()
     {
+        SpawnPlatform();
         timer = spawnRate; // Initialize the timer
     }
 
@@ -32,7 +34,7 @@ public class PlatformSpawner : MonoBehaviour
     void SpawnPlatform()
     {
         // Calculate the spawn position just above the top of the screen
-        float spawnY = Camera.main.orthographicSize + transform.position.y;
+        float spawnY = Camera.main.orthographicSize + transform.position.y + cameraPos.position.y + 5;
         float randomX = Random.Range(-Camera.main.orthographicSize * Camera.main.aspect, Camera.main.orthographicSize * Camera.main.aspect);
         Vector3 spawnPosition = new Vector3(randomX, spawnY, 0);
 

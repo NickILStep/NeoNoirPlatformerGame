@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AutoScrollBackup : MonoBehaviour
 {
-    private float timeToMove = 1.0f;
+    private float scrollSpeed = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,12 +14,6 @@ public class AutoScrollBackup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeToMove = timeToMove - Time.deltaTime;
-        if (timeToMove <= 0.0f)
-        {
-            transform.localPosition += new Vector3(0, 10, 0);
-            Debug.Log("Current position: " + transform.position.y);
-            timeToMove = 1.0f;
-        }
+        transform.localPosition += Vector3.up * scrollSpeed * Time.deltaTime;
     }
 }
