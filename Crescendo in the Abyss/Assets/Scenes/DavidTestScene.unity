@@ -468,6 +468,19 @@ MonoBehaviour:
   timer: 0
   screenBounds: 7
   isGrounded: 1
+--- !u!114 &1511580943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511580937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87509a1518b418248bd252a138076c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPos: {fileID: 519420032}
 --- !u!1001 &1606951383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -477,7 +490,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8007355016277205553, guid: 02b92d29716491e4b8d34bc04349c5e4, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8007355016277205553, guid: 02b92d29716491e4b8d34bc04349c5e4, type: 3}
       propertyPath: m_LocalPosition.x
