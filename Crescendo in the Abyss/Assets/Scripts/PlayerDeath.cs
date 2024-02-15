@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -19,8 +20,7 @@ public class PlayerDeath : MonoBehaviour
         if(playerY < cameraY - 9)
         {
             Debug.Log("Player Died");
-            UnityEditor.EditorApplication.isPlaying = false;
-            //Application.Quit();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
