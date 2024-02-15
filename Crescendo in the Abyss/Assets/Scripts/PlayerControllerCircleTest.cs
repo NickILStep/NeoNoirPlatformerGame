@@ -9,7 +9,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
     public float gravityScale = 1f; // Force of gravity for different jump heights
     public float jumpTimer = 0.5f; // Max length of jump time
     public float timer; // To keep track of jump time
-    public float screenBounds = 7f; // To set the edge boundary of the screen
+    public float screenBounds = 10f; // To set the edge boundary of the screen
     private Rigidbody2D rb; // Reference to the Rigidbody2D component
     public bool isGrounded = true; // To check if the ball is on the ground
     private bool startTimer = false; // To keep track of if we're using the timer for jumping

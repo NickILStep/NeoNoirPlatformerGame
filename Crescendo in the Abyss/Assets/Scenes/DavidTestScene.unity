@@ -326,8 +326,8 @@ GameObject:
   - component: {fileID: 1511580939}
   - component: {fileID: 1511580938}
   - component: {fileID: 1511580941}
-  - component: {fileID: 1511580942}
   - component: {fileID: 1511580943}
+  - component: {fileID: 1511580944}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -449,25 +449,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1511580942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511580937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58f213ef9282e4d42b2184ace79615e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  jumpForce: 8
-  gravityScale: 2
-  jumpTimer: 0.75
-  timer: 0
-  screenBounds: 7
-  isGrounded: 1
 --- !u!114 &1511580943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +462,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPos: {fileID: 519420032}
+--- !u!114 &1511580944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511580937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f213ef9282e4d42b2184ace79615e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpForce: 8
+  gravityScale: 1
+  jumpTimer: 0.5
+  timer: 0
+  screenBounds: 10
+  isGrounded: 1
 --- !u!1001 &1606951383
 PrefabInstance:
   m_ObjectHideFlags: 0
