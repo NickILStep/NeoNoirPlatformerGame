@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AutoScrollBackup : MonoBehaviour
 {
-    private float scrollSpeed = 0.5f;
+    public float scrollSpeed = 2f;
     // Start is called before the first frame update
     void Start()
     {

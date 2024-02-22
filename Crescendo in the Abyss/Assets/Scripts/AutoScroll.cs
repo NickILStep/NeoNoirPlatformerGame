@@ -11,7 +11,7 @@ public class AutoScroll : MonoBehaviour
     void Update()
     {
         // Move the object down continuously at scrollSpeed units per second
-        transform.localPosition += Vector3.down * scrollSpeed * Time.deltaTime;
+        //transform.localPosition += Vector3.down * scrollSpeed * Time.deltaTime;
     }
 }
 

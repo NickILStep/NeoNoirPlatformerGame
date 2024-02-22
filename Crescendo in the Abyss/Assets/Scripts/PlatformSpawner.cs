@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     public GameObject platformPrefab; // Drag your platform prefab here in the inspector
-    public float spawnRate = 2.0f; // Time in seconds between each spawn
+    public float spawnRate = 0.5f; // Time in seconds between each spawn
     public float platformMinLength = 2.0f; // Minimum length of the platform
     public float platformMaxLength = 5.0f; // Maximum length of the platform
     public Transform cameraPos;
