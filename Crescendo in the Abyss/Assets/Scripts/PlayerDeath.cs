@@ -17,7 +17,7 @@ public class PlayerDeath : MonoBehaviour
         float cameraY = cameraPos.position.y;
         float playerY = transform.position.y;
 
-        if(playerY < cameraY - 9)
+        if(playerY < cameraY - 9.5)
         {
             Debug.Log("Player Died");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

@@ -9,6 +9,7 @@ public class PlatformSpawner : MonoBehaviour
     public float platformMinLength = 2.0f; // Minimum length of the platform
     public float platformMaxLength = 5.0f; // Maximum length of the platform
     public Transform cameraPos;
+    private Vector3 prevPlatformPos = new Vector3(0, 3.35f, 0);
 
     private float timer; // Timer to keep track of spawning
 
@@ -34,15 +35,29 @@ public class PlatformSpawner : MonoBehaviour
     void SpawnPlatform()
     {
         // Calculate the spawn position just above the top of the screen
-        float spawnY = Camera.main.orthographicSize + transform.position.y + cameraPos.position.y + 5;
-        float randomX = Random.Range(-Camera.main.orthographicSize * Camera.main.aspect, Camera.main.orthographicSize * Camera.main.aspect);
-        Vector3 spawnPosition = new Vector3(randomX, spawnY, 0);
-
+        Vector3 spawnPosition = newPlatformPos();
+        prevPlatformPos = spawnPosition;
         // Instantiate the platform at the spawn position
         GameObject newPlatform = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
 
         // Randomly scale the platform's length
         float platformLength = Random.Range(platformMinLength, platformMaxLength);
         newPlatform.transform.localScale = new Vector3(platformLength, newPlatform.transform.localScale.y, newPlatform.transform.localScale.z);
+    }
+
+    Vector3 newPlatformPos()
+    {
+        float platformPosDifference;
+        float spawnY, spawnX;
+        do
+        {
+            spawnY = Camera.main.orthographicSize + transform.position.y + cameraPos.position.y + 3;
+            spawnX = Random.Range(-Camera.main.orthographicSize * Camera.main.aspect, Camera.main.orthographicSize * Camera.main.aspect);
+
+            platformPosDifference = System.Math.Abs(prevPlatformPos.x - spawnX);
+        } while (platformPosDifference > 15.0f);
+
+        Debug.Log(platformPosDifference);
+        return new Vector3(spawnX, spawnY, 0);
     }
 }

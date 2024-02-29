@@ -18,7 +18,7 @@ public class AutoScrollBackup : MonoBehaviour
     void Update()
     {
         transform.localPosition += Vector3.up * scrollSpeed * Time.deltaTime;
-        if(player.position.y > transform.position.y + 3)
+        if(player.position.y > transform.position.y + 5)
         {
             followScrollSpeed = scrollSpeed + (player.position.y - transform.position.y);
             transform.localPosition += Vector3.up * followScrollSpeed * Time.deltaTime;
