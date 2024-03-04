@@ -639,7 +639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511580937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.03, z: 0}
+  m_LocalPosition: {x: 0, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jumpForce: 8
+  jumpForce: 7
   gravityScale: 1
   jumpTimer: 0.5
   timer: 0
@@ -742,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8007355016277205553, guid: 02b92d29716491e4b8d34bc04349c5e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.89
+      value: 0.28999984
       objectReference: {fileID: 0}
     - target: {fileID: 8007355016277205553, guid: 02b92d29716491e4b8d34bc04349c5e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -799,7 +799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8007355016277205553, guid: 02b92d29716491e4b8d34bc04349c5e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3500001
+      value: 5.94
       objectReference: {fileID: 0}
     - target: {fileID: 8007355016277205553, guid: 02b92d29716491e4b8d34bc04349c5e4, type: 3}
       propertyPath: m_LocalPosition.z

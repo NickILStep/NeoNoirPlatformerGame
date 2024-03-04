@@ -51,7 +51,7 @@ public class PlatformSpawner : MonoBehaviour
         float spawnY, spawnX;
         do
         {
-            spawnY = Camera.main.orthographicSize + transform.position.y + cameraPos.position.y + 3;
+            spawnY = Camera.main.orthographicSize + transform.position.y + cameraPos.position.y + 6;
             spawnX = Random.Range(-Camera.main.orthographicSize * Camera.main.aspect, Camera.main.orthographicSize * Camera.main.aspect);
 
             platformPosDifference = System.Math.Abs(prevPlatformPos.x - spawnX);
