@@ -68,16 +68,21 @@ public class PlayerControllerCircleTest : MonoBehaviour
     {
         if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            rb.gravityScale = 0;
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb.gravityScale = 0f;
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             startTimer = true;
             isGrounded = false;
         }
 
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             rb.gravityScale = gravityScale;
             startTimer = false;
+        }
+
+        if (!isGrounded && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            rb.gravityScale = 4 * gravityScale;
         }
 
         if (startTimer)
@@ -90,6 +95,15 @@ public class PlayerControllerCircleTest : MonoBehaviour
             }
         }
     }
+
+        //if(rb.gravityScale < gravityScale && Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //    rb.gravityScale = gravityScale;
+        //}
+        
+        //else
+        //{
+        //    rb.gravityScale = 0f;
 
     //void Jump()
     //{
@@ -108,6 +122,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
             if (hitPos.normal.y > 0 && collision.gameObject.CompareTag("Ground")) // Make sure your ground has a tag "Ground" and is making contact with the bottom of the player
             {
                 isGrounded = true; // Set isGrounded to true when colliding with the ground
+                animator.SetBool("isGrounded", true);
                 timer = jumpTimer;
                 break;
             }
@@ -119,6 +134,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+            animator.SetBool("isGrounded", false);
         }
     }
 }
