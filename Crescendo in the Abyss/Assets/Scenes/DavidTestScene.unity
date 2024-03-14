@@ -782,6 +782,7 @@ MonoBehaviour:
   timer: 0
   screenBounds: 12.5
   isGrounded: 1
+  animator: {fileID: 1511580945}
 --- !u!95 &1511580945
 Animator:
   serializedVersion: 5

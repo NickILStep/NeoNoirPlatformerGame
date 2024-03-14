@@ -1,3 +1,4 @@
+using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
     private Rigidbody2D rb; // Reference to the Rigidbody2D component
     public bool isGrounded = true; // To check if the ball is on the ground
     private bool startTimer = false; // To keep track of if we're using the timer for jumping
+    public Animator animator; //Used to interact with animation states
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,23 @@ public class PlayerControllerCircleTest : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal"); // Get left/right arrow key input
         Vector2 movement = new Vector2(moveHorizontal, 0f); // Create movement vector
         rb.velocity = new Vector2(movement.x * speed, rb.velocity.y); // Apply movement to the Rigidbody2D
+
+        //facing right
+        if(Input.GetAxis("Horizontal") > 0.01f)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x = 1;
+            gameObject.transform.localScale = theScale;
+        }
+        //facing left
+        if (Input.GetAxis("Horizontal") < -0.01f)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x = -1;
+            gameObject.transform.localScale = theScale;
+        }
+
+        animator.SetFloat("speed", Mathf.Abs(moveHorizontal)); //
 
         if(transform.position.x > screenBounds)
         {
