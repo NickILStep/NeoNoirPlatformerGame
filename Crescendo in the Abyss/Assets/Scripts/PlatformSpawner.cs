@@ -6,8 +6,10 @@ public class PlatformSpawner : MonoBehaviour
 {
     public GameObject platformPrefab; // Drag your platform prefab here in the inspector
     private float heightToSpawn;
-    public float platformMinLength = 2.0f; // Minimum length of the platform
-    public float platformMaxLength = 5.0f; // Maximum length of the platform
+    //public float platformMinLength = 2.0f; // Minimum length of the platform
+    //public float platformMaxLength = 5.0f; // Maximum length of the platform
+    private Object[] platformSprites;
+    private float[] lengths = { 1.0f, 2.0f, 4.0f, 8.0f };
     public Transform cameraPos;
     private Vector3 prevPlatformPos = new Vector3(0, 3.35f, 0);
     private float screenEdge = 12.89f; 
@@ -17,6 +19,7 @@ public class PlatformSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        platformSprites = Resources.LoadAll("Platforms");
         SpawnPlatform();
         heightToSpawn = cameraPos.position.y;
     }
@@ -36,14 +39,19 @@ public class PlatformSpawner : MonoBehaviour
     void SpawnPlatform()
     {
         // Calculate the spawn position just above the top of the screen
-        float platformLength = Random.Range(platformMinLength, platformMaxLength);
+        int randIndex = Random.Range(0, 4);
+        Debug.Log("Rand index is: " + randIndex.ToString());
+        float platformLength = lengths[randIndex];
         Vector3 spawnPosition = newPlatformPos(platformLength);
         prevPlatformPos = spawnPosition;
         // Instantiate the platform at the spawn position
+        Sprite sprite = platformSprites[randIndex * 2 + 1] as Sprite;
         GameObject newPlatform = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
-
-        // Randomly scale the platform's length
-        newPlatform.transform.localScale = new Vector3(platformLength, newPlatform.transform.localScale.y, newPlatform.transform.localScale.z);
+        SpriteRenderer renderer = newPlatform.GetComponent<SpriteRenderer>();
+        BoxCollider2D collider = newPlatform.GetComponent<BoxCollider2D>();
+        collider.size = new Vector2(platformLength, collider.size.y);
+        renderer.sprite = sprite;
+        newPlatform.layer = 7;
     }
 
     Vector3 newPlatformPos(float length)
@@ -56,7 +64,7 @@ public class PlatformSpawner : MonoBehaviour
             spawnX = Random.Range(-screenEdge + (length / 2), screenEdge - (length / 2));
 
             platformPosDifference = System.Math.Abs(prevPlatformPos.x - spawnX);
-        } while (platformPosDifference > 15.0f);
+        } while (platformPosDifference > 12.0f);
 
         //Debug.Log(platformPosDifference);
         return new Vector3(spawnX, spawnY, 0);

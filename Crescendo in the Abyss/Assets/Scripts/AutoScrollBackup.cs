@@ -22,7 +22,7 @@ public class AutoScrollBackup : MonoBehaviour
         float speedUpAmount = 0f;
         if (transform.position.y >= positionToSpeedUp)
         {
-            speedUpAmount += 0.5f;
+            speedUpAmount += 0.15f;
             positionToSpeedUp += 20.0f;
         }
         scrollSpeed += speedUpAmount;
