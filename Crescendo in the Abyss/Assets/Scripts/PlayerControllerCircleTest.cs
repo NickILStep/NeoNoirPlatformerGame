@@ -52,7 +52,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
             gameObject.transform.localScale = theScale;
         }
 
-        animator.SetFloat("speed", Mathf.Abs(moveHorizontal)); //
+        animator.SetFloat("speed", Mathf.Abs(moveHorizontal)); //running animation
 
         if(transform.position.x > screenBounds)
         {
@@ -72,6 +72,8 @@ public class PlayerControllerCircleTest : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             startTimer = true;
             isGrounded = false;
+            animator.SetBool("isJumping", true); //jumping animation
+            animator.SetBool("isGrounded", false); //isnt grounded yet
         }
 
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
@@ -83,6 +85,9 @@ public class PlayerControllerCircleTest : MonoBehaviour
         if (!isGrounded && Input.GetKeyDown(KeyCode.DownArrow))
         {
             rb.gravityScale = 4 * gravityScale;
+            animator.SetBool("isFastFall", true); //falling animation
+            animator.SetBool("isJumping", false); //disable jumping animation
+            animator.SetBool("isGrounded", false); //isnt grounded yet
         }
 
         if (startTimer)
@@ -122,7 +127,8 @@ public class PlayerControllerCircleTest : MonoBehaviour
             if (hitPos.normal.y > 0 && collision.gameObject.CompareTag("Ground")) // Make sure your ground has a tag "Ground" and is making contact with the bottom of the player
             {
                 isGrounded = true; // Set isGrounded to true when colliding with the ground
-                animator.SetBool("isGrounded", true);
+                animator.SetBool("isGrounded", true); //plays grounded animation
+                animator.SetBool("isJumping", false); //hopefully cycles to Idle animation
                 timer = jumpTimer;
                 break;
             }
@@ -134,7 +140,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
-            animator.SetBool("isGrounded", false);
+            animator.SetBool("isGrounded", false); //isnt grounded yet
         }
     }
 }
