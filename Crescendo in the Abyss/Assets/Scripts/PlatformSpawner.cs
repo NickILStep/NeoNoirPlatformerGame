@@ -51,7 +51,7 @@ public class PlatformSpawner : MonoBehaviour
         BoxCollider2D collider = newPlatform.GetComponent<BoxCollider2D>();
         collider.size = new Vector2(platformLength, collider.size.y);
         renderer.sprite = sprite;
-        newPlatform.layer = 7;
+        newPlatform.layer = 6;
     }
 
     Vector3 newPlatformPos(float length)
