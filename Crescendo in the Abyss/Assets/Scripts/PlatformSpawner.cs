@@ -27,12 +27,14 @@ public class PlatformSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float difference = cameraPos.position.y - heightToSpawn;
-
-        if (difference >= 5.0f)
+        if (cameraPos != null)
         {
-            SpawnPlatform();
-            heightToSpawn = cameraPos.position.y;
+            float difference = cameraPos.position.y - heightToSpawn;
+            if (difference >= 5.0f)
+            {
+                SpawnPlatform();
+                heightToSpawn = cameraPos.position.y;
+            }
         }
     }
 
