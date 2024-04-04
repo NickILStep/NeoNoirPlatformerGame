@@ -2,18 +2,21 @@ using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerControllerCircleTest : MonoBehaviour
 {
     public float startSpeed = 5f;
     private float speed; // Speed of the player movement
     public float jumpForce = 8f; // Force of the jump
+    public float adjustedJumpForce;
     public float gravityScale = 1f; // Force of gravity for different jump heights
     public float jumpTimer = 0.5f; // Max length of jump time
     public float timer; // To keep track of jump time
     public float screenBounds = 10f; // To set the edge boundary of the screen
     private Rigidbody2D rb; // Reference to the Rigidbody2D component
     public bool isGrounded = true; // To check if the ball is on the ground
+    public bool isWall = false;
     private bool startTimer = false; // To keep track of if we're using the timer for jumping
     public Animator animator; //Used to interact with animation states
     public AutoScrollBackup autoScrollScript; //for getting the speed of the background scroll
@@ -76,13 +79,17 @@ public class PlayerControllerCircleTest : MonoBehaviour
     {
         float scrollSpeed = autoScrollScript.GetCurrentScrollSpeed();
         // Adjust jumpForce based on scrollSpeed
-        float adjustedJumpForce = jumpForce + scrollSpeed * 1.0f; 
+        adjustedJumpForce = jumpForce + scrollSpeed * 1.0f; 
 
         // adjust gravityScale based on scrollSpeed for more natural jump at higher speeds
         float adjustedGravityScale = gravityScale + scrollSpeed * 0.2f; // Tweak this multiplier based on testing
 
         if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
         {
+            if(isWall)
+            {
+                rb.velocity = Vector3.zero;
+            }
             rb.gravityScale = 0f; // Consider keeping this or adjusting if the initial ascent feels off
             rb.AddForce(new Vector2(0f, adjustedJumpForce), ForceMode2D.Impulse);
             startTimer = true;
@@ -91,7 +98,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
             animator.SetBool("isGrounded", false);
         }
 
-        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
+        if (!isWall && Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             rb.gravityScale = adjustedGravityScale;
             startTimer = false;
@@ -139,15 +146,31 @@ public class PlayerControllerCircleTest : MonoBehaviour
     // Detect collision with the ground
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        foreach(ContactPoint2D hitPos in collision.contacts)
+        foreach(ContactPoint2D hitPos in collision.contacts) // Make sure your ground has a tag "Ground" and is making contact with the bottom of the player
         {
-            if (hitPos.normal.y > 0 && collision.gameObject.CompareTag("Ground")) // Make sure your ground has a tag "Ground" and is making contact with the bottom of the player
+            if (collision.gameObject.CompareTag("Ground"))
             {
-                isGrounded = true; // Set isGrounded to true when colliding with the ground
-                animator.SetBool("isGrounded", true); //plays grounded animation
-                animator.SetBool("isJumping", false); //hopefully cycles to Idle animation
-                timer = jumpTimer;
-                break;
+                // Top of platform
+                if (hitPos.normal.y == 1) 
+                {
+                    isGrounded = true; // Set isGrounded to true when colliding with the ground
+                    animator.SetBool("isGrounded", true); //plays grounded animation
+                    animator.SetBool("isJumping", false); //hopefully cycles to Idle animation
+                    timer = jumpTimer;
+                    break;
+                }
+
+                // Side of platform
+                if (Math.Abs(hitPos.normal.x) == 1 && (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) && Math.Abs(rb.transform.position.y - collision.transform.position.y) < .65))
+                {
+                    isGrounded = true; // Set isGrounded to true when colliding with the ground
+                    isWall = true;
+                    timer = jumpTimer;
+                    rb.velocity = Vector3.zero;
+                    rb.gravityScale = 0f;
+                    startTimer = true;
+                    break;
+                }
             }
         }
     }
@@ -156,6 +179,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Ground"))
         {
+            isWall = false;
             isGrounded = false;
             animator.SetBool("isGrounded", false); //isnt grounded yet
         }
