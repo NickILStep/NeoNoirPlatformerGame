@@ -154,7 +154,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 8007355016277205565, guid: 02b92d29716491e4b8d34bc04349c5e4, type: 3}
+  platformAssetPack: {fileID: 11400000, guid: 2dc5683ad7f9e2b4d9f4664984c91882, type: 2}
   cameraPos: {fileID: 519420032}
+  tiers:
+  - heightThreshold: 0
+    minIndex: 0
+    maxIndex: 4
+  - heightThreshold: 250
+    minIndex: 5
+    maxIndex: 8
 --- !u!4 &26651770
 Transform:
   m_ObjectHideFlags: 0
@@ -1777,6 +1785,8 @@ MonoBehaviour:
   isWall: 0
   animator: {fileID: 1511580945}
   autoScrollScript: {fileID: 519420033}
+  slidingMomentum: 10
+  slipperyHeightThreshold: 10
 --- !u!95 &1511580945
 Animator:
   serializedVersion: 5

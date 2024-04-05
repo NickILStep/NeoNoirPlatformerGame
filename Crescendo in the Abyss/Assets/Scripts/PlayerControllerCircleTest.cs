@@ -20,6 +20,9 @@ public class PlayerControllerCircleTest : MonoBehaviour
     private bool startTimer = false; // To keep track of if we're using the timer for jumping
     public Animator animator; //Used to interact with animation states
     public AutoScrollBackup autoScrollScript; //for getting the speed of the background scroll
+    public float slidingMomentum = 10f; // Sliding momentum force
+    public float slipperyHeightThreshold = 250f; // Height threshold for slippery platforms
+    private bool isSliding = false; // Flag to track if the player is sliding
 
 
     // Start is called before the first frame update
@@ -49,7 +52,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
         rb.velocity = new Vector2(movement.x * speed, rb.velocity.y); // Apply movement to the Rigidbody2D
 
         //facing right
-        if(Input.GetAxis("Horizontal") > 0.01f)
+        if (Input.GetAxis("Horizontal") > 0.01f)
         {
             Vector3 theScale = transform.localScale;
             theScale.x = 1;
@@ -63,13 +66,26 @@ public class PlayerControllerCircleTest : MonoBehaviour
             gameObject.transform.localScale = theScale;
         }
 
+        if (isSliding)
+        {
+            // Apply sliding momentum based on the player's facing direction
+            if (transform.localScale.x > 0)
+            {
+                rb.AddForce(Vector2.right * slidingMomentum, ForceMode2D.Force);
+            }
+            else if (transform.localScale.x < 0)
+            {
+                rb.AddForce(Vector2.left * slidingMomentum, ForceMode2D.Force);
+            }
+        }
+
         animator.SetFloat("speed", Mathf.Abs(moveHorizontal)); //running animation
 
-        if(transform.position.x > screenBounds)
+        if (transform.position.x > screenBounds)
         {
             transform.position = new Vector3(screenBounds, transform.position.y, transform.position.z);
         }
-        else if(transform.position.x < -screenBounds)
+        else if (transform.position.x < -screenBounds)
         {
             transform.position = new Vector3(-screenBounds, transform.position.y, transform.position.z);
         }
@@ -79,14 +95,14 @@ public class PlayerControllerCircleTest : MonoBehaviour
     {
         float scrollSpeed = autoScrollScript.GetCurrentScrollSpeed();
         // Adjust jumpForce based on scrollSpeed
-        adjustedJumpForce = jumpForce + scrollSpeed * 1.0f; 
+        adjustedJumpForce = jumpForce + scrollSpeed * 1.0f;
 
         // adjust gravityScale based on scrollSpeed for more natural jump at higher speeds
         float adjustedGravityScale = gravityScale + scrollSpeed * 0.2f; // Tweak this multiplier based on testing
 
         if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if(isWall)
+            if (isWall)
             {
                 rb.velocity = Vector3.zero;
             }
@@ -146,17 +162,28 @@ public class PlayerControllerCircleTest : MonoBehaviour
     // Detect collision with the ground
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        foreach(ContactPoint2D hitPos in collision.contacts) // Make sure your ground has a tag "Ground" and is making contact with the bottom of the player
+        foreach (ContactPoint2D hitPos in collision.contacts)
         {
             if (collision.gameObject.CompareTag("Ground"))
             {
                 // Top of platform
-                if (hitPos.normal.y == 1) 
+                if (hitPos.normal.y == 1)
                 {
-                    isGrounded = true; // Set isGrounded to true when colliding with the ground
-                    animator.SetBool("isGrounded", true); //plays grounded animation
-                    animator.SetBool("isJumping", false); //hopefully cycles to Idle animation
+                    isGrounded = true;
+                    animator.SetBool("isGrounded", true);
+                    animator.SetBool("isJumping", false);
                     timer = jumpTimer;
+
+                    // Check if the player is above the slippery height threshold
+                    if (transform.position.y >= slipperyHeightThreshold)
+                    {
+                        isSliding = true;
+                    }
+                    else
+                    {
+                        isSliding = false;
+                    }
+
                     break;
                 }
 
@@ -177,7 +204,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isWall = false;
             isGrounded = false;
