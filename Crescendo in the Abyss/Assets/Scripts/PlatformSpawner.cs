@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
-    public GameObject platformPrefab; // Drag your platform prefab here in the inspector
+
+    [System.Serializable]
+    public class SpriteTier
+    {
+        public float heightThreshold; // Height at which this tier becomes active
+        public int minIndex; // Minimum sprite index for this tier
+        public int maxIndex; // Maximum sprite index (exclusive) for this tier
+    }
+
+    public GameObject platformPrefab;
+    public PlatformAssetPack platformAssetPack;
     private float heightToSpawn;
     //public float platformMinLength = 2.0f; // Minimum length of the platform
     //public float platformMaxLength = 5.0f; // Maximum length of the platform
@@ -12,14 +22,18 @@ public class PlatformSpawner : MonoBehaviour
     private float[] lengths = { 1.0f, 2.0f, 4.0f, 8.0f };
     public Transform cameraPos;
     private Vector3 prevPlatformPos = new Vector3(0, 3.35f, 0);
-    private float screenEdge = 12.89f; 
+    private float screenEdge = 12.89f;
+    public List<SpriteTier> tiers = new List<SpriteTier>();
+    private int currentTierIndex = 0; // Tracks the current tier based on progression
+
+
+
 
     private float timer; // Timer to keep track of spawning
 
     // Start is called before the first frame update
     void Start()
     {
-        platformSprites = Resources.LoadAll("Platforms");
         SpawnPlatform();
         heightToSpawn = cameraPos.position.y;
     }
@@ -40,21 +54,49 @@ public class PlatformSpawner : MonoBehaviour
 
     void SpawnPlatform()
     {
-        // Calculate the spawn position just above the top of the screen
-        int randIndex = Random.Range(0, 4);
-        Debug.Log("Rand index is: " + randIndex.ToString());
-        float platformLength = lengths[randIndex];
+        // Update the current tier index based on the camera's height
+        for (int i = 0; i < tiers.Count; i++)
+        {
+            if (cameraPos.position.y >= tiers[i].heightThreshold)
+            {
+                currentTierIndex = i;
+            }
+            else
+            {
+                break; // Stop checking once we find the current tier
+            }
+        }
+
+        // Get the current tier based on the updated currentTierIndex
+        SpriteTier currentTier = tiers[currentTierIndex];
+
+        // Adjust the index range based on the current tier
+        int randIndex = Random.Range(currentTier.minIndex, Mathf.Min(currentTier.maxIndex, platformAssetPack.sprites.Length));
+        Debug.Log("Rand index is: " + randIndex);
+
+        // Adjust platform length selection based on tier index
+        // Note: This is where we're adjusting our approach
+        int lengthIndex = Mathf.Clamp(randIndex - currentTier.minIndex, 0, lengths.Length - 1);
+        float platformLength = lengths[lengthIndex];
+
         Vector3 spawnPosition = newPlatformPos(platformLength);
         prevPlatformPos = spawnPosition;
-        // Instantiate the platform at the spawn position
-        Sprite sprite = platformSprites[randIndex * 2 + 1] as Sprite;
         GameObject newPlatform = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         SpriteRenderer renderer = newPlatform.GetComponent<SpriteRenderer>();
         BoxCollider2D collider = newPlatform.GetComponent<BoxCollider2D>();
-        collider.size = new Vector2(platformLength, collider.size.y);
-        renderer.sprite = sprite;
+
+        // Assign the sprite to the renderer
+        renderer.sprite = platformAssetPack.sprites[randIndex];
+
+        // Here's where we dynamically set the collider size based on the sprite size
+        // We're considering the local scale of the newPlatform to correctly size the collider
+        float spriteWidth = renderer.sprite.bounds.size.x * newPlatform.transform.localScale.x;
+        float spriteHeight = renderer.sprite.bounds.size.y * newPlatform.transform.localScale.y;
+        collider.size = new Vector2(spriteWidth, spriteHeight);
+
         newPlatform.layer = 6;
     }
+
 
     Vector3 newPlatformPos(float length)
     {
@@ -63,12 +105,16 @@ public class PlatformSpawner : MonoBehaviour
         do
         {
             spawnY = Camera.main.orthographicSize + transform.position.y + cameraPos.position.y + 6;
-            spawnX = Random.Range(-screenEdge + (length / 2), screenEdge - (length / 2));
+
+            float adjustedEdge = screenEdge - (length);
+            spawnX = Random.Range(-adjustedEdge, adjustedEdge);
 
             platformPosDifference = System.Math.Abs(prevPlatformPos.x - spawnX);
         } while (platformPosDifference > 12.0f);
 
-        //Debug.Log(platformPosDifference);
         return new Vector3(spawnX, spawnY, 0);
     }
+
+
+
 }
