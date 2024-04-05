@@ -16,8 +16,8 @@ public class PlayerControllerCircleTest : MonoBehaviour
     public float screenBounds = 10f; // To set the edge boundary of the screen
     private Rigidbody2D rb; // Reference to the Rigidbody2D component
     public bool isGrounded = true; // To check if the ball is on the ground
+    public bool startTimer = false; // To keep track of if we're using the timer for jumping
     public bool isWall = false;
-    private bool startTimer = false; // To keep track of if we're using the timer for jumping
     public Animator animator; //Used to interact with animation states
     public AutoScrollBackup autoScrollScript; //for getting the speed of the background scroll
     public float slidingMomentum = 10f; // Sliding momentum force
@@ -100,7 +100,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
         // adjust gravityScale based on scrollSpeed for more natural jump at higher speeds
         float adjustedGravityScale = gravityScale + scrollSpeed * 0.2f; // Tweak this multiplier based on testing
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
+        if (isGrounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Mouse0)))
         {
             if (isWall)
             {
@@ -114,13 +114,13 @@ public class PlayerControllerCircleTest : MonoBehaviour
             animator.SetBool("isGrounded", false);
         }
 
-        if (!isWall && Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow))
+        if (!isWall && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) && Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.Mouse1)))
         {
             rb.gravityScale = adjustedGravityScale;
             startTimer = false;
         }
 
-        if (!isGrounded && Input.GetKeyDown(KeyCode.DownArrow))
+        if (!isGrounded && (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.Mouse1)))
         {
             // Consider how to adjust this based on scroll speed, if at all
             rb.gravityScale = 4 * adjustedGravityScale; // Adjusting the fast-fall to scale with the game's pace
