@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Jetpack
   layers:
   - Default
   - TransparentFX
