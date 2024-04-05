@@ -1786,7 +1786,7 @@ MonoBehaviour:
   animator: {fileID: 1511580945}
   autoScrollScript: {fileID: 519420033}
   slidingMomentum: 10
-  slipperyHeightThreshold: 10
+  slipperyHeightThreshold: 250
 --- !u!95 &1511580945
 Animator:
   serializedVersion: 5
