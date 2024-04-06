@@ -14,6 +14,7 @@ public class PowerupSpawner : MonoBehaviour
         Powerups = new List<string>()
         {
             "Jetpack",
+            "DoubleJump",
         };
         lastSpawnHeight = 0.0f;
     }

@@ -23,6 +23,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
     public float slidingMomentum = 10f; // Sliding momentum force
     public float slipperyHeightThreshold = 250f; // Height threshold for slippery platforms
     private bool isSliding = false; // Flag to track if the player is sliding
+    public bool hasDoubleJump = false;
 
 
     // Start is called before the first frame update
@@ -100,9 +101,9 @@ public class PlayerControllerCircleTest : MonoBehaviour
         // adjust gravityScale based on scrollSpeed for more natural jump at higher speeds
         float adjustedGravityScale = gravityScale + scrollSpeed * 0.2f; // Tweak this multiplier based on testing
 
-        if (isGrounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Mouse0)))
+        if ((isGrounded || hasDoubleJump) && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Mouse0)))
         {
-            if (isWall)
+            if (isWall || hasDoubleJump)
             {
                 rb.velocity = Vector3.zero;
             }
@@ -112,9 +113,14 @@ public class PlayerControllerCircleTest : MonoBehaviour
             isGrounded = false;
             animator.SetBool("isJumping", true);
             animator.SetBool("isGrounded", false);
+
+            if (hasDoubleJump)
+            {
+                hasDoubleJump = false;
+            }
         }
 
-        if (!isWall && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) && Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.Mouse1)))
+        if (!isWall && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.Mouse1)))
         {
             rb.gravityScale = adjustedGravityScale;
             startTimer = false;
