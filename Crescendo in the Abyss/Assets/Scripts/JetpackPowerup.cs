@@ -41,6 +41,7 @@ public class JetpackPowerup : MonoBehaviour
     {
         if (collision.tag == "Jetpack")
         {
+            rb.velocity = Vector3.zero;
             rb.gravityScale = 0f;
             rb.AddForce(new Vector2(0f, JetpackBoost()), ForceMode2D.Impulse);
             PlayerController.startTimer = true;
