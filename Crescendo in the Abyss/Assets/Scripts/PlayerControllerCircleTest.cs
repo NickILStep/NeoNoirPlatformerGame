@@ -106,6 +106,8 @@ public class PlayerControllerCircleTest : MonoBehaviour
             if (isWall || hasDoubleJump)
             {
                 rb.velocity = Vector3.zero;
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isFastFall", false);
             }
             rb.gravityScale = 0f; // Consider keeping this or adjusting if the initial ascent feels off
             rb.AddForce(new Vector2(0f, adjustedJumpForce), ForceMode2D.Impulse);
@@ -202,6 +204,8 @@ public class PlayerControllerCircleTest : MonoBehaviour
                     rb.velocity = Vector3.zero;
                     rb.gravityScale = 0f;
                     startTimer = true;
+                    animator.SetBool("isJumping", false);
+                    animator.SetBool("isFastFall", false);
                     break;
                 }
             }
