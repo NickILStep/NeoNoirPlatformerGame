@@ -196,7 +196,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
                 }
 
                 // Side of platform
-                if (Math.Abs(hitPos.normal.x) == 1 && (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) && Math.Abs(rb.transform.position.y - collision.transform.position.y) < .65))
+                if (Math.Abs(hitPos.normal.x) == 1 && (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && Math.Abs(rb.transform.position.y - collision.transform.position.y) < .65)
                 {
                     isGrounded = true; // Set isGrounded to true when colliding with the ground
                     isWall = true;
