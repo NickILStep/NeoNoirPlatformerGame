@@ -10,11 +10,17 @@ public class MainMenu : MonoBehaviour
     public string sceneToLoad;
     public TextMeshProUGUI startGameText;
     public TextMeshProUGUI quitGameText;
+    public TextMeshProUGUI instructionText;
+    public TextMeshProUGUI backText;
+    public GameObject menu;
+    public GameObject instructions;
 
     void Start()
     {
         SetupEventTrigger(startGameText, "LoadScene");
         SetupEventTrigger(quitGameText, "QuitGame");
+        SetupEventTrigger(instructionText, "InstructionPage");
+        SetupEventTrigger(backText, "MenuPage");
     }
 
     void SetupEventTrigger(TextMeshProUGUI text, string methodName)
@@ -34,6 +40,18 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void InstructionPage()
+    {
+        menu.SetActive(false);
+        instructions.SetActive(true);
+    }
+
+    public void MenuPage()
+    {
+        instructions.SetActive(false);
+        menu.SetActive(true);
     }
 
     void Update()
