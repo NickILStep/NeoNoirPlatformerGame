@@ -163,6 +163,9 @@ MonoBehaviour:
   - heightThreshold: 250
     minIndex: 5
     maxIndex: 8
+  - heightThreshold: 565
+    minIndex: 9
+    maxIndex: 12
 --- !u!4 &26651770
 Transform:
   m_ObjectHideFlags: 0
