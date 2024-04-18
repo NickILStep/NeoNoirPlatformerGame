@@ -10,6 +10,9 @@ public class PlayerDeath : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI restartText;
     public TextMeshProUGUI quitText;
+    public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI newHighScoreText;
+    
 
     private bool isDead = false;
 
@@ -20,6 +23,8 @@ public class PlayerDeath : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         restartText.gameObject.SetActive(false);
         quitText.gameObject.SetActive(false);
+        highScoreText.gameObject.SetActive(false);
+        newHighScoreText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,6 +50,16 @@ public class PlayerDeath : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         restartText.gameObject.SetActive(true);
         quitText.gameObject.SetActive(true);
+        highScoreText.gameObject.SetActive(true);
+
+        if (GameManager.Instance.isScoreHigher == true)
+        {
+            newHighScoreText.gameObject.SetActive(true);
+        }
+        else
+        {
+            newHighScoreText.gameObject.SetActive(false);
+        }
     }
 
 }
