@@ -1,0 +1,1383 @@
+fileFormatVersion: 2
+guid: 486fbd17109d38c458640abdd1f268ff
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WASDKeys_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1296
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8990ec81bd72ea542a07951ced1a105c
+      internalID: -98693953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_1
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1296
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d82341f37301141a4f565c07c21351
+      internalID: 1521315288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_2
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1296
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e16d2ecba6e49d43b81a5d9b15e2e52
+      internalID: 95636823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_3
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1296
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90b0927935752942a40a75e90c25338
+      internalID: 956866057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_4
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1296
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70337fbad98448746a84bf4253a26204
+      internalID: -790750915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_5
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 1296
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19551522c8a13549a6caf652eb72c5d
+      internalID: 589133659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_6
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1296
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e223684054ebb7444aaa79e659438004
+      internalID: 1782783394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1134
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f93640a2940ff4abcf8279b6ca7204
+      internalID: 71184698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_8
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 1134
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6c6ae96a320e34d9c0fda32699b967
+      internalID: -1753575715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_9
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1134
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670b30c4edfd76a48bb5e296d54c934d
+      internalID: -1933374875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_10
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1134
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545ef6a405ae67a408e995f27e8deb0c
+      internalID: 1556317470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_11
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1134
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3eaa4bb434864b49a2d0009912594d6
+      internalID: 651206882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_12
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 1134
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554907e503d7d4c449100351ba27463a
+      internalID: -1383920626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_13
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1134
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00488e14aa336f94f8898d9ab3fb9ad1
+      internalID: -1808905998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 972
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18875934016da8f42a87cf9689897c27
+      internalID: 1204383623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_15
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 972
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf23b50763dba244962b428d2a0800a
+      internalID: 63692097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_16
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 972
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94064aa6a5c84a044bc3d788ee03da0a
+      internalID: -720445499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_17
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 972
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05a0513b79bd2045a982b909a2a0fb4
+      internalID: 27283812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_18
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 972
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1727c78d10e1e40852fa352d5786f1
+      internalID: -1941024753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_19
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 972
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096fda17d82a27142b97c323ab6e6e0f
+      internalID: 293136309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_20
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 972
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff18d78b2df14c448a02fd8c5ae9273c
+      internalID: 1626633572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 810
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b81734b557a36479bf6439673ff58e
+      internalID: -1202787755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_22
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 810
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e885aca07592ab74fa64cd77d3602ecc
+      internalID: 509986791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_23
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 810
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c0be6c051103248b6560d1bff90440
+      internalID: -1498128955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_24
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 810
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bff3f3414ecfab4c915d9b3ee25bd52
+      internalID: 934030339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_25
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 810
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1f0edcfffe62f49877e7506921ff9e
+      internalID: -705689571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_26
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 810
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368b82faccb09a44e891be6eef5757bc
+      internalID: -1044075597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_27
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 810
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d645803abcf3624fbfb5ad468524229
+      internalID: 802767642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a5b42f2b4285745b8c7dc433065acf
+      internalID: 567253487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_29
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 648
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10fcae98dbbdbee4eb3a7a17594c6e61
+      internalID: -1083301405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_30
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 648
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6796461dfbeb64d8423d5dc8141984
+      internalID: 752948126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_31
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 648
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff549394ac486114aa47064a14e94f91
+      internalID: -1033151806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_32
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 648
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5f61a026a73514cb11f0dde243b4bd
+      internalID: -127388060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_33
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 648
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc3991d92f65d847b16997ca0ad78f2
+      internalID: -1697629964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_34
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 648
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb76d55374ee9d64093866f56c283e63
+      internalID: -1049514209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 486
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484ca81c3f2bada448bd6928fdaa8f2b
+      internalID: 1929074508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_36
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 486
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1519523397a227458cb3f19c1944cc1
+      internalID: 929063207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_37
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 486
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670f6cb1867d6ed4eb23359c2221a0b9
+      internalID: 1131318914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_38
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 486
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3680caffd349d24cbbd701cad008f60
+      internalID: -1953694305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_39
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 486
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18666a7ef475e24c9fb864d6ac3c8d4
+      internalID: -934184905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_40
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 486
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e36a5d73599a541889e851c2c2cae5
+      internalID: 1122362389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_41
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 486
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06e7bac32c8cd64f8f01e53ce0d2b96
+      internalID: 1283868394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 324
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddc686e759500f4da97753c421547d2
+      internalID: 1870492180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_43
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 324
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd911d1aad73f594bb1d99e975d5228b
+      internalID: 725127841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_44
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 324
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e9718d23309bb41b7815b1403841be
+      internalID: 396626704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_45
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 324
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d0b2232e712574aa210596afa8b117
+      internalID: -1917291973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_46
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 324
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3c5d59732272a40b83f5e633c75a0d
+      internalID: -1362435644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_47
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 324
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1e979b23e58084a881642b26544d94
+      internalID: 416528659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_48
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 324
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12117c5029068a04fa17b695235069d0
+      internalID: -610827298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 162
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07ba0b56b2653646a70fbccaf8349c9
+      internalID: 211698324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_50
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 162
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bd86c9557ee7b498878f8b09aa233b
+      internalID: -481950212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_51
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 162
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77687620182c684a96c3d45cac7e481
+      internalID: 1210114261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_52
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 162
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e937d0421ccf074aae7f71030a788bd
+      internalID: 966984730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_53
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 162
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9100410238dd6b84ba70ddd10201190f
+      internalID: -375003839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_54
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 162
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5bcebe56d1e5e84ba2a15475c7d0c18
+      internalID: -2138461779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_55
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 162
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114cff3e9112b8842a516c08b8c7491d
+      internalID: -232641451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WASDKeys_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 190
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe1373200b27c643b5609aedbbe4899
+      internalID: 664914924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      WASDKeys_0: -98693953
+      WASDKeys_1: 1521315288
+      WASDKeys_10: 1556317470
+      WASDKeys_11: 651206882
+      WASDKeys_12: -1383920626
+      WASDKeys_13: -1808905998
+      WASDKeys_14: 1204383623
+      WASDKeys_15: 63692097
+      WASDKeys_16: -720445499
+      WASDKeys_17: 27283812
+      WASDKeys_18: -1941024753
+      WASDKeys_19: 293136309
+      WASDKeys_2: 95636823
+      WASDKeys_20: 1626633572
+      WASDKeys_21: -1202787755
+      WASDKeys_22: 509986791
+      WASDKeys_23: -1498128955
+      WASDKeys_24: 934030339
+      WASDKeys_25: -705689571
+      WASDKeys_26: -1044075597
+      WASDKeys_27: 802767642
+      WASDKeys_28: 567253487
+      WASDKeys_29: -1083301405
+      WASDKeys_3: 956866057
+      WASDKeys_30: 752948126
+      WASDKeys_31: -1033151806
+      WASDKeys_32: -127388060
+      WASDKeys_33: -1697629964
+      WASDKeys_34: -1049514209
+      WASDKeys_35: 1929074508
+      WASDKeys_36: 929063207
+      WASDKeys_37: 1131318914
+      WASDKeys_38: -1953694305
+      WASDKeys_39: -934184905
+      WASDKeys_4: -790750915
+      WASDKeys_40: 1122362389
+      WASDKeys_41: 1283868394
+      WASDKeys_42: 1870492180
+      WASDKeys_43: 725127841
+      WASDKeys_44: 396626704
+      WASDKeys_45: -1917291973
+      WASDKeys_46: -1362435644
+      WASDKeys_47: 416528659
+      WASDKeys_48: -610827298
+      WASDKeys_49: 211698324
+      WASDKeys_5: 589133659
+      WASDKeys_50: -481950212
+      WASDKeys_51: 1210114261
+      WASDKeys_52: 966984730
+      WASDKeys_53: -375003839
+      WASDKeys_54: -2138461779
+      WASDKeys_55: -232641451
+      WASDKeys_56: 664914924
+      WASDKeys_57: -1065891677
+      WASDKeys_58: 1155122177
+      WASDKeys_59: 1755934385
+      WASDKeys_6: 1782783394
+      WASDKeys_60: 2093983389
+      WASDKeys_61: 596410133
+      WASDKeys_62: 230086883
+      WASDKeys_7: 71184698
+      WASDKeys_8: -1753575715
+      WASDKeys_9: -1933374875
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
