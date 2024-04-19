@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform cameraPos;
     private float timeBetweenSpawns;
-    private float startTimeBetweenSpawns = 5f;
+    private float startTimeBetweenSpawns = 20f;
     private float screenEdge = 12.89f;
     private enum Direction { Left, Right }
 // Start is called before the first frame update
