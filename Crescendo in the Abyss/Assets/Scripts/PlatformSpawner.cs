@@ -110,7 +110,7 @@ public class PlatformSpawner : MonoBehaviour
             spawnX = Random.Range(-adjustedEdge, adjustedEdge);
 
             platformPosDifference = System.Math.Abs(prevPlatformPos.x - spawnX);
-        } while (platformPosDifference > 12.0f);
+        } while (platformPosDifference > 11.0f);
 
         return new Vector3(spawnX, spawnY, 0);
     }

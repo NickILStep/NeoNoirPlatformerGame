@@ -21,7 +21,7 @@ public class JetpackPowerup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float scrollSpeed = autoScrollScript.GetCurrentScrollSpeed();
+        float scrollSpeed = AutoScrollBackup.GetCurrentScrollSpeed();
         float adjustedGravityScale = PlayerController.gravityScale + scrollSpeed * 0.2f;
         if (Camera.position.y + 50 >= prevCameraPos)
         {

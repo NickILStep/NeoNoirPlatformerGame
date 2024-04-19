@@ -14,7 +14,7 @@ public class PlayerDeath : MonoBehaviour
     public TextMeshProUGUI newHighScoreText;
     
 
-    private bool isDead = false;
+    public static bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,7 @@ public class PlayerDeath : MonoBehaviour
         quitText.gameObject.SetActive(false);
         highScoreText.gameObject.SetActive(false);
         newHighScoreText.gameObject.SetActive(false);
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -37,10 +38,13 @@ public class PlayerDeath : MonoBehaviour
 
             if (playerY < cameraY - 9.5f)
             {
-                Debug.Log("Player Died");
                 isDead = true;
-                ShowDeathUI();
             }
+        }
+        else
+        {
+            Debug.Log("Player Died");
+            ShowDeathUI();
         }
     }
 

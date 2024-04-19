@@ -44,7 +44,6 @@ public class JumpPowerup : MonoBehaviour
             }
         }
     }
-
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         if (collision.tag == "DoubleJump")

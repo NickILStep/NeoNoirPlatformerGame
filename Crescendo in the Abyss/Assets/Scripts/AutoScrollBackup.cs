@@ -5,9 +5,10 @@ using TMPro;
 
 public class AutoScrollBackup : MonoBehaviour
 {
-    private float scrollSpeed;
+    private static float scrollSpeed;
     private float followScrollSpeed;
     private float positionToSpeedUp;
+    private float maxSpeed = 7f;
     public Transform player;
 
     void Start()
@@ -18,6 +19,7 @@ public class AutoScrollBackup : MonoBehaviour
 
     void Update()
     {
+        if (scrollSpeed > maxSpeed) scrollSpeed = maxSpeed; //Test numbers
         float speedUpAmount = 0f;
         if (transform.position.y >= positionToSpeedUp)
         {
@@ -33,7 +35,7 @@ public class AutoScrollBackup : MonoBehaviour
         }
     }
 
-    public float GetCurrentScrollSpeed()
+    public static float GetCurrentScrollSpeed()
     {
         return scrollSpeed;
     }

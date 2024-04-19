@@ -44,7 +44,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
 
     void MovePlayer()
     {
-        float scrollSpeed = autoScrollScript.GetCurrentScrollSpeed();
+        float scrollSpeed = AutoScrollBackup.GetCurrentScrollSpeed();
         // Adjust speed based on scrollSpeed
         speed = startSpeed + scrollSpeed * 1.0f;
 
@@ -94,7 +94,7 @@ public class PlayerControllerCircleTest : MonoBehaviour
 
     void Jump()
     {
-        float scrollSpeed = autoScrollScript.GetCurrentScrollSpeed();
+        float scrollSpeed = AutoScrollBackup.GetCurrentScrollSpeed();
         // Adjust jumpForce based on scrollSpeed
         adjustedJumpForce = jumpForce + scrollSpeed * 1.0f;
 
